@@ -4,17 +4,16 @@ import { SocialIcon } from "react-social-icons";
 
 export default function NavBar() {
   return (
-    <header className="bg-green-600">
-      <div className="container mx-auto flex justify-betweeen">
+    <header className="bg-blue-600">
+      <div className="container mx-auto flex justify-between">
         <nav className="flex">
           <NavLink
             to="/"
             exact
             activeClassName="text-white"
             className="inflex-flex items-center py-6 px-3 mr-4 text-blue-100 hover:text-green-800 text-4xl font-bold tracking-widest"
-            activeClassName="text-blue-100 bg-blue-700"
           >
-            Josh Talltree
+            Joshua Talltree
           </NavLink>
           <NavLink
             to="/post"
@@ -45,6 +44,13 @@ export default function NavBar() {
             target="_blank"
             fgColor="#fff"
             style={{ height: 35, width: 35 }}
+          />
+          <SocialIcon
+              url="https://www.reddit.com/user/Good_Historian3282"
+              className="mr-4"
+              target="_blank"
+              fgColor="#fff"
+              style={{ height: 35, width: 35 }}
           />
         </div>
       </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import image from ".public/SA_river.jpeg"
+import image from "../SA.jpg";
 
 export default function Home() {
     return (
