@@ -4,9 +4,9 @@ import image from "../SA.jpg";
 export default function Home() {
     return (
         <main>
-            <img src={image} alt="San Antonio River" className="absolute object-cover w-full h-full"/>
-            <section>
-                <h1>Hello, I'm Joshua Talltree</h1>
+            <img src={image} alt="San Antonio Downtown" className="absolute object-cover w-full h-full"/>
+            <section className="relative flex justify-center min-h-screen pt-12 lg:pt-64 px-8">
+                <h1 className="text-6xl text-blue-100 font-bold lg:leading-snug home-name">Hello, I'm Joshua</h1>
             </section>
         </main>
     )
