@@ -3,11 +3,11 @@ import {Link} from "react-router-dom";
 import sanityClient from "../client.js";
 
 export default function Post() {
-    const [postData, setPost] = useState(null)
+    const [postData, setPost] = useState(null);
 
     useEffect(() => {
         sanityClient
-            .fetch(`*[_type="post"]{
+            .fetch(`*[_type == "post"]{
                 title,
                 slug,
                 mainImage{
@@ -31,15 +31,20 @@ export default function Post() {
                     {postData && postData.map((post, index) => (
                         <article>
                             <Link to={"/post/" + post.slug.current} key={post.slug.current}>
-                        <span className="block h-64 relative rounded shadow leading-snug bg-white border-green-400"
-                              key={index}>
-                            <img src={post.mainImage.asset.url} alt={post.mainImage.alt}
-                                 className="w-full h-full rounded-r object-cover absolute"/>
-                            <span className="block relative h-full flex justify-end items-end pr-4 pb-4">
-                                <h3 className="text-gray-800 text-lg font-blog px-3 py-4 bg-blue-700 bg-opacity-75 rounded" />
-                                {post.title}
-                            </span>
-                        </span>
+                                <span
+                                    className="block h-64 relative rounded shadow leading-snug bg-white border-green-400"
+                                    key={index}>
+                                    <img
+                                        src={post.mainImage.asset.url}
+                                        alt={post.mainImage.alt}
+                                        className="w-full h-full rounded-r object-cover absolute"
+                                    />
+                                    <span className="block relative h-full flex justify-end items-end pr-4 pb-4">
+                                        <h3 className="text-gray-800 text-lg font-blog px-3 py-4 bg-blue-700 bg-opacity-75 rounded">
+                                            {post.title}
+                                        </h3>
+                                    </span>
+                                </span>
                             </Link>
                         </article>
                     ))}
