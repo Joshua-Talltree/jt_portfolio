@@ -23,6 +23,11 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "scripts": {
+    "start": "sanity start",
+    "test": "sanity check",
+    "build": "sanity build public -y"
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
